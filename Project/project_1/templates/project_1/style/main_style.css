@@ -1,0 +1,125 @@
+body {
+    background-color: bisque;
+}
+
+.register_bar {
+    position:relative;
+    margin-block:10px;
+    
+    margin-left:5px;
+    width: 390px;
+    height: 22px;
+    background: #fbc182;
+    border-radius:5px;
+    padding:6px;
+    display:inline-block;
+}
+
+
+.fromSpan {
+    
+    position:absolute;
+    margin-left:10px;
+    
+}
+a {
+    text-decoration:none;
+}
+    a:hover {
+        text-decoration:underline;
+    }
+
+input:placeholder-shown {
+    border-radius: 3px;
+    border: 2px solid darkorange;
+    background-color: #fcdaab;
+}
+
+.buttonRB {
+    position: absolute;
+    display: "flex";
+    /*border-radius: 4px;
+    border-color: #fcdaab;*/
+    margin-left: 5px;
+    width: 30px;
+    height: 22px;
+    background: #fbc182 url("buttonExBG.png") no-repeat center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.search_line {
+    position: fixed;
+    width:300px;
+    height:22px;
+    
+    /*transform: translate();*/
+    margin-block:10px;
+    margin-left: 50%;
+    
+    display: inline-block;
+    
+    padding: 6px;
+    background: #fbc182;
+    border-radius:5px;
+}
+.search {
+    width:220px;
+    background-color: #fbc182;
+    border-block:20px;
+}
+.button_sc {
+    height: 22px;
+    width: 60px;
+    background: #fbc182;
+    border:none;
+    outline: none;
+}
+.top_line {
+display:block;
+
+}
+.menu {
+    display: block;
+    width: 830px;
+    max-width: 80%;
+    padding:20px 20px 20px 20px;
+    position: relative;
+    margin-left: 20%;
+    margin-top: 20%;
+    border-radius: 10px;
+    border: 2px solid darkorange;
+    background-color: #fbc182;
+}
+div.menu ul li a {
+    float: left;
+    height: 20px;
+    outline: 0px solid red;
+    font-size: 16px;
+    padding: 23px 30px 0px 14px;
+    display: inline-block;
+    margin-block: -38px;
+    color: #fff;
+    margin-bottom: auto;
+}
+
+li{
+  list-style-type:none;  
+}
+
+.menu ul#topnav li .sar {
+    display:none;
+    outline:0px solid red; 
+    position:absolute; 
+    left:90px;
+    bottom:50px;
+    width:auto;
+    height:auto;
+    background: rgba(228, 155, 56, 0.81); 
+}
+
+.menu ul#topnav li .sar-active {
+    display:block;
+}
