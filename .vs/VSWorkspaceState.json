@@ -2,13 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Project",
+    "\\Project\\Project",
     "\\Project\\project_1",
-    "\\Project\\project_1\\templates",
-    "\\Project\\project_1\\templates\\project_1",
-    "\\Project\\project_1\\templates\\project_1\\images",
-    "\\Project\\project_1\\templates\\project_1\\style",
-    "\\Project\\templates"
+    "\\Project\\project_1\\static",
+    "\\Project\\project_1\\static\\script"
   ],
-  "SelectedNode": "\\Project\\project_1\\templates\\project_1\\main_page.html",
   "PreviewInSolutionExplorer": false
 }

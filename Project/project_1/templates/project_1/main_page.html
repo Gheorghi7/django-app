@@ -1,52 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style/main_style.css">
-    <link rel="icon" href="images/anime.png">
+    {%load static%}
+    <link rel="stylesheet" href="{%static '/style/main_style.css'%}">
+    <link rel="icon" href="{%static '/images/anime.png'%}">
     <meta charset="UTF-8">
     <title>Amine-web</title>
+   
 
 
 </head>
 <body>
     <div>
         <div class="top_line">
-            
-            <div class="register_bar" >
+
+            <div class="register_bar">
                 <form method="post" style="">
                     <input id="login" name="login_name" type="text" placeholder="Login">
-                    <input id="passwprd" name="password" type="text" placeholder="****">
+                    <input id="passwprd" name="password" type="password" placeholder="****">
                     <input type="button" class="buttonRB">
 
                 </form>
             </div>
             <div class="search_line">
-                <form method="post">
-                    <input class="search" placeholder="Write here what you want to find" />
-                    <input type="button" class="button_sc" value="Search" />
+                <form method="get">
+                    <input class="search" id="search" placeholder="Write here what you want to find" />
+                    <button type="button" class="button_sc" id="button_id">Search</button>
                 </form>
             </div>
 
-            
+
         </div>
+
         <div class="fromSpan">
             <span>
-                <a href="#">Forgot your password?</a>
+                <a href="">Forgot your password?</a>
 
-                <a href="#">Registration!</a>
+                <a id="btm" href="" onclick="return false;">Registration!</a>
             </span>
         </div>
+        <div id="overlay" class="overlay"></div>
+        <div id="registration_bar" class="registration_bar">
+            <table>
+                <tbody>
+                    <tr>
+                        <td id="form_reg">
+                            <input type="text" class="reg" placeholder="Login" /><br />
+                            <input type="email" class="reg" placeholder="Email" /><br />
+                            <input type="password" class="reg" placeholder="Password" /><br />
+                            <input type="password" class="reg" placeholder="Password" /><br />
+                            <button type="button" class="reg" id="submit_bt">Submit</button>
 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="notice"></div>
+        </div>
 
         <div class="head_block">
             <div class="menu">
                 <ul id="topnav">
                     <li name="main">
-                        <a href="main">Main</a> 
+                        <a href="main">Main</a>
                     </li>
                     <li name="genre">
-                        <a href="genre">Genre</a> 
-                        <div class="sar">
+                        <a id="button_1" href="" onclick="return false;">Genre</a>
+                        <div class="sar" id="sar1">
                             <span id="blok_1">
                                 <a href="/zhanr/boyevyye-iskusstva/">Боевые искусства</a>
                                 <a href="/zhanr/voyna/">Война</a>
@@ -84,21 +104,23 @@
                             </span>
                         </div>
                     </li>
-                    <li name="tip"> 
-                        <a href="tip">Categories</a>
-                        <span class="sar">
-                            <a href="/tip/tv/">ТВ</a>
-                            <a href="/tip/tv-speshl/">ТВ-спэшл</a>
-                            <a href="/tip/ova/">OVA</a>
-                            <a href="/tip/ona/">ONA</a>
-                            <a href="/tip/polnometrazhnyy-film/">Полнометражный фильм</a>
-                            <a href="/tip/korotkometrazhnyy-film/">Короткометражный фильм</a>
-                            <a href="/tip/dunkhua/">Дунхуа</a>
-                        </span>
+                    <li name="tip">
+                        <a id="button_2" href="" onclick="return false;">Categories</a>
+                        <div id="sar2" class="sar">
+                            <span id="blok_92">
+                                <a href="/tip/tv/">ТВ</a>
+                                <a href="/tip/tv-speshl/">ТВ-спэшл</a>
+                                <a href="/tip/ova/">OVA</a>
+                                <a href="/tip/ona/">ONA</a>
+                                <a href="/tip/polnometrazhnyy-film/">Полнометражный фильм</a>
+                                <a href="/tip/korotkometrazhnyy-film/">Короткометражный фильм</a>
+                                <a href="/tip/dunkhua/">Дунхуа</a>
+                            </span>
+                        </div>
                     </li>
-                    <li name="year"> 
-                        <a href="year">Year</a>
-                        <span class="sar">
+                    <li name="year">
+                        <a id="button_3" href="" onclick="return false;">Year</a>
+                        <div id="sar3" class="sar">
                             <span id="blok_19">
                                 <a href="/god/1971/">1971</a>
                                 <a href="/god/1977/">1977</a>
@@ -107,7 +129,7 @@
                                 <a href="/god/1991/">1991</a>
                                 <a href="/god/1992/">1992</a>
                             </span>
-                            <span id="blok_5">
+                            <span id="blok_20">
                                 <a href="/god/1993/">1993</a>
                                 <a href="/god/1994/">1994</a>
                                 <a href="/god/1995/">1995</a>
@@ -115,7 +137,7 @@
                                 <a href="/god/1997/">1997</a>
                                 <a href="/god/1998/">1998</a>
                             </span>
-                            <span id="blok_6">
+                            <span id="blok_21">
                                 <a href="/god/1999/">1999</a>
                                 <a href="/god/2000/">2000</a>
                                 <a href="/god/2001/">2001</a>
@@ -123,7 +145,7 @@
                                 <a href="/god/2003/">2003</a>
                                 <a href="/god/2004/">2004</a>
                             </span>
-                            <span id="blok_7">
+                            <span id="blok_22">
                                 <a href="/god/2005/">2005</a>
                                 <a href="/god/2006/">2006</a>
                                 <a href="/god/2007/">2007</a>
@@ -131,7 +153,7 @@
                                 <a href="/god/2009/">2009</a>
                                 <a href="/god/2010/">2010</a>
                             </span>
-                            <span id="blok_8">
+                            <span id="blok_23">
                                 <a href="/god/2011/">2011</a>
                                 <a href="/god/2012/">2012</a>
                                 <a href="/god/2013/">2013</a>
@@ -139,7 +161,7 @@
                                 <a href="/god/2015/">2015</a>
                                 <a href="/god/2016/">2016</a>
                             </span>
-                            <span id="blok_20">
+                            <span id="blok_24">
                                 <a href="/god/2017/">2017</a>
                                 <a href="/god/2018/">2018</a>
                                 <a href="/god/2019/">2019</a>
@@ -147,23 +169,23 @@
                                 <a href="/god/2021/">2021</a>
                                 <a href="/god/2022/">2022</a>
                             </span>
-                            <span id="blok_21">
+                            <span id="blok_25">
                                 <a href="/god/2023/">2023</a>
                                 <a href="/god/2024/">2024</a>
                             </span>
 
-                        </span>
+                        </div>
                     </li>
-                    <li name="ongoing"> 
+                    <li name="ongoing">
                         <a href="ongoing">Ongoing</a>
                     </li>
-                    <li name="prewiew"> 
+                    <li name="prewiew">
                         <a href="prewiew">Prewiew</a>
                     </li>
-                    <li name="contacts"> 
+                    <li name="contacts">
                         <a href="contacts">Contacts</a>
                     </li>
-                    <li name="feedback"> 
+                    <li name="feedback">
                         <a href="feedback">Contacts</a>
                     </li>
                 </ul>
@@ -171,20 +193,84 @@
 
         </div>
         <div>
-            <div class="left_block">
-                <div class="inter_block"></div>
-                <div class="inter_block_two"></div>
-            </div>
+
             <div class="center_block">
-                <div class="present"></div>
-                <div class="stext"></div>
+                <div class="present">
+                    <div id="text">
+                        <h1>База №1 по просмотру аниме онлайн бесплатно</h1>
+                        <p>
+                            <b>Аниме</b> - это искусство мультипликации зародилось еще в XX в. на Востоке, в далекой Японии. Но что удивительно, своим названием этот жанр обязан вовсе не японскому слову. Как вы уже догадались, слово «аниме» это всего лишь сокращение от английского «animation», которое получило успешное распространение из-за своей простоты произношения. Однако, не нужно торопиться. Ведь именно познав простоту и легкость этого удивительного жанра, вы возможно познаете себя. Японская анимация обладает качественными отличиями от своих европейских собратьев. Все дело в особом менталитете и, конечно же, оригинальной рисовке. Приведу простой пример, в мультфильмах очень часто можно встретить персонажей, которые выражают свои эмоции в скрытой форме (японцы замкнутый и скрытый по натуре народ, но при этом они вежливые и гостеприимные, но их широта души не равна русской, так что осторожнее). Не только это до сих пор заставляет поклонников аниме смотреть все новые и новые серии, а некоторые даже собираются на особые фестивали в честь своего увлечения и устраивают костюмированное шоу-косплей. Вторым условием для просмотра этих мультфильмов я считаю детальную прорисованность и, как следствие, восхитительное качество фильма налицо.
+
+                            Популярность аниме и аниме-сериалов к настоящему времени сильно возросла. Даже трудно сказать, что сейчас популярнее манга онлайн или аниме онлайн. Но все же одно я могу сказать точно, что в интернете сейчас полным-полно сайтов, где куча материалов по вышеизложенной мною теме. Кстати, я считаю не лишним предложить вам посетить молодой проект animevost.org (АнимеВостОрг). Это полное собрание уже переведенных на русский язык аниме, плюс описания к ним. Для комфортного просмотра на сайте сделан удобный плеер, функционал которого приятно удивляет в самый подходящий момент.
+                        </p>
+                    </div>
+                </div>
+                <div class="sort-bar">
+                </div>
                 <div>
-                    <div class="static_info"></div>
-                    <div class="short_content"></div>
-                    <div class="short_story"></div>
+                    {% for obj in object %}
+                    <div class="movie-block">
+                        <a href="#"><h1>{{obj.title}}</h1></a>
+                        <div class="shortcontent">
+                            <div class="image">
+                            </div>
+                            <div class="static_info">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href=""><img id="image_1" src={{obj.image.url}} /></a>
+
+                                                <p><b>Release year</b>: {{obj.year}}</p>
+                                                <p><b>Genre</b>: {{obj.genre}}</p>
+                                                <p><b>Number of episodes</b>: {{obj.episodes}}</p>
+                                                <p style="font-size:16px;">
+                                                    <b>Description</b>:<br />
+                                                    {{obj.description}}
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    {%endfor%}
+                    <div id="afterAll">
+                        <div id="block">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td id="block_1"></td>
+                                        <td id="block_2">
+                                            {%for i in loop%}
+                                            <a href="#">{{i}}</a>
+                                            {%endfor%}
+                                            <span>...</span>
+                                            <a href="#">{{len_of_obj}}</a>
+                                        </td>
+                                        <td id="block_3"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
+        <script src="{%static 'script/head.js'%}"></script>
+        <script src="{%static 'script/search.js'%}"></script>
+        <script src="{%static 'script/registration_2.js'%}"></script>
+
+
+        <!--<script src="head.js"></script>
+    <script src="search.js"></script>-->
+
     </div>
 </body>
 </html>
